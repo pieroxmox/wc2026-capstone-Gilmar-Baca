@@ -1,0 +1,455 @@
+{
+ "data": {
+  "history_rows": 49547,
+  "history_first": "1872-11-30",
+  "history_last": "2026-08-26",
+  "history_pre_tournament": 49416,
+  "training_2000_plus": 25354,
+  "wc_matches": 104,
+  "group_matches": 72,
+  "knockout_matches": 32,
+  "wc_result_shares": {
+   "H": 0.442,
+   "D": 0.279,
+   "A": 0.279
+  },
+  "polymarket_markets": 312,
+  "price_points": 28166,
+  "hours_before_kickoff_median": 6.997777777777777,
+  "hours_before_kickoff_p90": 10.998222222222223,
+  "hours_before_kickoff_max": 11.99888888888889,
+  "overround_mean": 1.0031538461538463,
+  "overround_min": 0.985,
+  "overround_max": 1.0150000000000001,
+  "volume_total_usd": 2730916367.855578,
+  "volume_median_per_match_usd": 25311957.07035919,
+  "goals_per_match_wc": 2.8846153846153846,
+  "goals_per_match_hist_2000": 2.7562909205648025
+ },
+ "brier_diff_vs_market": {
+  "hgb": {
+   "mean_diff": 0.03883112704644369,
+   "ci95": [
+    0.007445047030621497,
+    0.07048807044956593
+   ],
+   "share_matches_model_better": 0.40384615384615385
+  },
+  "pois": {
+   "mean_diff": 0.043545747222806054,
+   "ci95": [
+    0.013387311401507635,
+    0.07437559539466608
+   ],
+   "share_matches_model_better": 0.41346153846153844
+  },
+  "ens": {
+   "mean_diff": 0.03997964521734055,
+   "ci95": [
+    0.0101918263522938,
+    0.07011039916693296
+   ],
+   "share_matches_model_better": 0.3942307692307692
+  }
+ },
+ "metrics": [
+  {
+   "model": "Gradient boosting",
+   "accuracy": 0.5769,
+   "log_loss": 0.9022,
+   "brier": 0.5342,
+   "brier_group": 0.5388,
+   "accuracy_group": 0.5694,
+   "brier_knockout": 0.5238,
+   "accuracy_knockout": 0.5938
+  },
+  {
+   "model": "Poisson goals",
+   "accuracy": 0.6058,
+   "log_loss": 0.9154,
+   "brier": 0.5389,
+   "brier_group": 0.5426,
+   "accuracy_group": 0.6111,
+   "brier_knockout": 0.5304,
+   "accuracy_knockout": 0.5938
+  },
+  {
+   "model": "Ensemble",
+   "accuracy": 0.6058,
+   "log_loss": 0.906,
+   "brier": 0.5353,
+   "brier_group": 0.5395,
+   "accuracy_group": 0.6111,
+   "brier_knockout": 0.5258,
+   "accuracy_knockout": 0.5938
+  },
+  {
+   "model": "Polymarket",
+   "accuracy": 0.6346,
+   "log_loss": 0.8397,
+   "brier": 0.4953,
+   "brier_group": 0.4843,
+   "accuracy_group": 0.6667,
+   "brier_knockout": 0.5202,
+   "accuracy_knockout": 0.5625
+  },
+  {
+   "model": "Uniform (1/3 each)",
+   "accuracy": 0.4423,
+   "log_loss": 1.0986,
+   "brier": 0.6667,
+   "brier_group": 0.6667,
+   "accuracy_group": NaN,
+   "brier_knockout": 0.6667,
+   "accuracy_knockout": NaN
+  }
+ ],
+ "pick_agreement": {
+  "ens_vs_market": 0.9038461538461539,
+  "ens_pick_shares": {
+   "H": 0.635,
+   "A": 0.365
+  },
+  "mkt_pick_shares": {
+   "H": 0.654,
+   "A": 0.327,
+   "D": 0.019
+  },
+  "draws_predicted_by_ens": 0,
+  "draws_predicted_by_market": 2,
+  "favourite_hit_rate_market": 0.6346153846153846
+ },
+ "strategies": [
+  {
+   "strategy": "A. Ensemble pick, every match",
+   "bets": 104,
+   "wins": 63,
+   "hit_rate": 0.6058,
+   "avg_price": 0.6034,
+   "staked_usd": 15600.0,
+   "profit_usd": -290.5999,
+   "roi": -0.0186,
+   "profit_ci95_low": -2878.8265,
+   "profit_ci95_high": 2278.4068,
+   "max_drawdown_usd": -1296.7244
+  },
+  {
+   "strategy": "A. Gradient boosting pick, every match",
+   "bets": 104,
+   "wins": 60,
+   "hit_rate": 0.5769,
+   "avg_price": 0.5926,
+   "staked_usd": 15600.0,
+   "profit_usd": -1105.0169,
+   "roi": -0.0708,
+   "profit_ci95_low": -3685.7831,
+   "profit_ci95_high": 1504.7267,
+   "max_drawdown_usd": -2029.3284
+  },
+  {
+   "strategy": "A. Poisson goals pick, every match",
+   "bets": 104,
+   "wins": 63,
+   "hit_rate": 0.6058,
+   "avg_price": 0.605,
+   "staked_usd": 15600.0,
+   "profit_usd": -290.5999,
+   "roi": -0.0186,
+   "profit_ci95_low": -2878.8265,
+   "profit_ci95_high": 2278.4068,
+   "max_drawdown_usd": -1296.7244
+  },
+  {
+   "strategy": "B. Ensemble pick when edge > 5%",
+   "bets": 25,
+   "wins": 13,
+   "hit_rate": 0.52,
+   "avg_price": 0.4378,
+   "staked_usd": 3750.0,
+   "profit_usd": 246.4093,
+   "roi": 0.0657,
+   "profit_ci95_low": -1345.5616,
+   "profit_ci95_high": 1893.6985,
+   "max_drawdown_usd": -848.4891
+  },
+  {
+   "strategy": "C. Largest-edge outcome when edge > 5%",
+   "bets": 65,
+   "wins": 16,
+   "hit_rate": 0.2462,
+   "avg_price": 0.2538,
+   "staked_usd": 9750.0,
+   "profit_usd": -3290.105,
+   "roi": -0.3374,
+   "profit_ci95_low": -6358.3654,
+   "profit_ci95_high": 225.8776,
+   "max_drawdown_usd": -4824.3336
+  },
+  {
+   "strategy": "D. Market favourite, every match (control)",
+   "bets": 104,
+   "wins": 66,
+   "hit_rate": 0.6346,
+   "avg_price": 0.6165,
+   "staked_usd": 15600.0,
+   "profit_usd": 520.0845,
+   "roi": 0.0333,
+   "profit_ci95_low": -2029.4328,
+   "profit_ci95_high": 3067.584,
+   "max_drawdown_usd": -1105.5152
+  }
+ ],
+ "strategy_A_ens_by_stage": {
+  "Group": {
+   "bets": 72,
+   "wins": 44,
+   "profit": -698.03
+  },
+  "Knockout": {
+   "bets": 32,
+   "wins": 19,
+   "profit": 407.43
+  }
+ },
+ "edge_buckets": [
+  {
+   "edge_bucket": "< -5 pts",
+   "bets": 42,
+   "hit_rate": 0.7857,
+   "profit": 980.7934,
+   "roi": 0.1557
+  },
+  {
+   "edge_bucket": "-5 to 0",
+   "bets": 18,
+   "hit_rate": 0.3889,
+   "profit": -1084.156,
+   "roi": -0.4015
+  },
+  {
+   "edge_bucket": "0 to 5",
+   "bets": 19,
+   "hit_rate": 0.5263,
+   "profit": -433.6466,
+   "roi": -0.1522
+  },
+  {
+   "edge_bucket": "5 to 10",
+   "bets": 10,
+   "hit_rate": 0.8,
+   "profit": 1181.72,
+   "roi": 0.7878
+  },
+  {
+   "edge_bucket": "> 10 pts",
+   "bets": 15,
+   "hit_rate": 0.3333,
+   "profit": -935.3107,
+   "roi": -0.4157
+  }
+ ],
+ "surprises": [
+  {
+   "wc_match_id": 43,
+   "date": "2026-06-15",
+   "home_team": "Spain",
+   "away_team": "Cape Verde",
+   "ft_home": 0,
+   "ft_away": 0,
+   "result_90": "D",
+   "price_of_result": 0.06,
+   "ens_H": 0.903,
+   "ens_D": 0.073,
+   "ens_A": 0.023
+  },
+  {
+   "wc_match_id": 28,
+   "date": "2026-06-20",
+   "home_team": "Ecuador",
+   "away_team": "Cura\u00e7ao",
+   "ft_home": 0,
+   "ft_away": 0,
+   "result_90": "D",
+   "price_of_result": 0.095,
+   "ens_H": 0.845,
+   "ens_D": 0.107,
+   "ens_A": 0.048
+  },
+  {
+   "wc_match_id": 86,
+   "date": "2026-07-03",
+   "home_team": "Argentina",
+   "away_team": "Cape Verde",
+   "ft_home": 1,
+   "ft_away": 1,
+   "result_90": "D",
+   "price_of_result": 0.105,
+   "ens_H": 0.872,
+   "ens_D": 0.096,
+   "ens_A": 0.032
+  },
+  {
+   "wc_match_id": 69,
+   "date": "2026-06-23",
+   "home_team": "England",
+   "away_team": "Ghana",
+   "ft_home": 0,
+   "ft_away": 0,
+   "result_90": "D",
+   "price_of_result": 0.125,
+   "ens_H": 0.838,
+   "ens_D": 0.121,
+   "ens_A": 0.041
+  },
+  {
+   "wc_match_id": 8,
+   "date": "2026-06-13",
+   "home_team": "Qatar",
+   "away_team": "Switzerland",
+   "ft_home": 1,
+   "ft_away": 1,
+   "result_90": "D",
+   "price_of_result": 0.135,
+   "ens_H": 0.106,
+   "ens_D": 0.159,
+   "ens_A": 0.736
+  },
+  {
+   "wc_match_id": 6,
+   "date": "2026-06-24",
+   "home_team": "South Africa",
+   "away_team": "South Korea",
+   "ft_home": 1,
+   "ft_away": 0,
+   "result_90": "H",
+   "price_of_result": 0.165,
+   "ens_H": 0.177,
+   "ens_D": 0.242,
+   "ens_A": 0.581
+  },
+  {
+   "wc_match_id": 30,
+   "date": "2026-06-25",
+   "home_team": "Ecuador",
+   "away_team": "Germany",
+   "ft_home": 2,
+   "ft_away": 1,
+   "result_90": "H",
+   "price_of_result": 0.172,
+   "ens_H": 0.299,
+   "ens_D": 0.275,
+   "ens_A": 0.426
+  },
+  {
+   "wc_match_id": 20,
+   "date": "2026-06-13",
+   "home_team": "Australia",
+   "away_team": "Turkey",
+   "ft_home": 2,
+   "ft_away": 0,
+   "result_90": "H",
+   "price_of_result": 0.175,
+   "ens_H": 0.288,
+   "ens_D": 0.272,
+   "ens_A": 0.44
+  }
+ ],
+ "elo_top": [
+  {
+   "team": "Spain",
+   "elo": 2226.0,
+   "in_wc2026": 1,
+   "rank_overall": 1
+  },
+  {
+   "team": "Argentina",
+   "elo": 2189.0,
+   "in_wc2026": 1,
+   "rank_overall": 2
+  },
+  {
+   "team": "France",
+   "elo": 2129.0,
+   "in_wc2026": 1,
+   "rank_overall": 3
+  },
+  {
+   "team": "England",
+   "elo": 2094.0,
+   "in_wc2026": 1,
+   "rank_overall": 4
+  },
+  {
+   "team": "Brazil",
+   "elo": 2069.0,
+   "in_wc2026": 1,
+   "rank_overall": 5
+  },
+  {
+   "team": "Colombia",
+   "elo": 2063.0,
+   "in_wc2026": 1,
+   "rank_overall": 6
+  },
+  {
+   "team": "Portugal",
+   "elo": 2059.0,
+   "in_wc2026": 1,
+   "rank_overall": 7
+  },
+  {
+   "team": "Ecuador",
+   "elo": 2026.0,
+   "in_wc2026": 1,
+   "rank_overall": 8
+  },
+  {
+   "team": "Netherlands",
+   "elo": 2009.0,
+   "in_wc2026": 1,
+   "rank_overall": 9
+  },
+  {
+   "team": "Germany",
+   "elo": 2000.0,
+   "in_wc2026": 1,
+   "rank_overall": 10
+  },
+  {
+   "team": "Japan",
+   "elo": 1993.0,
+   "in_wc2026": 1,
+   "rank_overall": 11
+  },
+  {
+   "team": "Morocco",
+   "elo": 1985.0,
+   "in_wc2026": 1,
+   "rank_overall": 12
+  },
+  {
+   "team": "Norway",
+   "elo": 1983.0,
+   "in_wc2026": 1,
+   "rank_overall": 13
+  },
+  {
+   "team": "Mexico",
+   "elo": 1976.0,
+   "in_wc2026": 1,
+   "rank_overall": 14
+  },
+  {
+   "team": "Uruguay",
+   "elo": 1974.0,
+   "in_wc2026": 1,
+   "rank_overall": 15
+  },
+  {
+   "team": "Turkey",
+   "elo": 1974.0,
+   "in_wc2026": 1,
+   "rank_overall": 16
+  }
+ ]
+}

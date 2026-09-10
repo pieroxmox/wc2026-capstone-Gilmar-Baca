@@ -1,0 +1,57 @@
+{
+ "verified_at_utc": "2026-09-10T06:17:04+00:00",
+ "sources": {
+  "international_results": {
+   "url": "https://raw.githubusercontent.com/martj42/international_results/master/results.csv",
+   "status": 200,
+   "bytes": 3729861,
+   "rows": 49547,
+   "columns": [
+    "date",
+    "home_team",
+    "away_team",
+    "home_score",
+    "away_score",
+    "tournament",
+    "city",
+    "country",
+    "neutral"
+   ],
+   "first_date": "1872-11-30",
+   "last_date": "2026-08-26",
+   "wc2026_matches": 104,
+   "md5": "97d9f3415b6c974560056df78e921994",
+   "matches_local_copy": true
+  },
+  "polymarket": {
+   "gamma_status": 200,
+   "clob_status": 200,
+   "sample_event": "fifwc-esp-arg-2026-07-19",
+   "markets": [
+    {
+     "question": "Will Spain win on 2026-07-19?",
+     "outcome_prices": "[\"0\", \"1\"]",
+     "volume_usd": 20835093.762332156
+    },
+    {
+     "question": "Will Spain vs. Argentina end in a draw?",
+     "outcome_prices": "[\"1\", \"0\"]",
+     "volume_usd": 9115515.023500096
+    },
+    {
+     "question": "Will Argentina win on 2026-07-19?",
+     "outcome_prices": "[\"0\", \"1\"]",
+     "volume_usd": 17136118.76088532
+    }
+   ],
+   "price_points_sample_market": 7
+  },
+  "openfootball": {
+   "url": "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+   "status": 200,
+   "matches": 104,
+   "with_scores": 104,
+   "final": "Spain v Argentina {'et': [1, 0], 'ft': [0, 0], 'ht': [0, 0]}"
+  }
+ }
+}
